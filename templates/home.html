@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jovian Careers</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+        h1 {
+            font-size: 40px;
+            font-family: 'Roboto';
+            font-weight: normal;
+            color: rgb(130, 0, 0);
+            text-align: center;
+        }
+        #banner {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+        }
+        h2 {
+            font-family: 'Roboto';
+            font-weight: lighter;
+            font-size: 32px;
+            color: rgb(217, 20, 20);
+            text-align: center;
+        }
+
+        #container{
+            width: 720px;
+            margin: 0 auto;
+        }
+        
+        .button-container{
+            text-align: center;
+        }
+        .contact-btn{
+            font-weight: 600;
+            transition: all 300ms ease;
+            padding: 1rem;
+            width: 8rem;
+            border-radius: 2rem;
+            border: 2px solid grey;
+            margin: 5rem;
+        }
+
+        .contact-btn:hover, .apply-btn:hover {
+            background: rgb(187, 0, 0);
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            border: none;
+        }
+        .apply-button-container {
+            
+            display: flex;
+            align-items: center;margin-left: auto;
+        }
+        .apply-btn {
+            font-weight: 600;
+            transition: all 300ms ease;
+            padding: 1rem;
+            width: 8rem;
+            border-radius: 2rem;
+            border: grey;
+            margin-top: 1rem;
+            margin-right: 1rem;
+            border: 2px solid grey;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>{{company_name}} Careers</h1>
+        <img id="banner" src="/static/skyline.jpeg">
+        <h2>About Jovian</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus tempore temporibus odit itaque 
+            et sunt quis atque facilis, cupiditate veniam provident doloremque aspernatur? Quibusdam quidem 
+            soluta enim perferendis, nostrum alias? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Accusamus optio quos in aspernatur sapiente sed magnam, eaque earum laborum, labore tenetur sequi, 
+            nam nemo possimus modi. Molestias quisquam in voluptate? Lorem ipsum dolor, sit amet consectetur 
+            adipisicing elit. Sed, perferendis? Odit exercitationem reprehenderit hic incidunt, aut animi qui 
+            inventore, quasi, ipsa ipsam enim! Totam amet aperiam nam voluptate numquam explicabo.</p>
+        <h2>Open Positions</h2>
+        <div> 
+            {% for job in jobs %}
+                <div style="display:flex;margin-bottom: 16px; font-family: 'Roboto'; font-size: 17px; border-bottom: 1px solid lightgrey; padding-bottom: 9px; margin-bottom: -4px ;">
+                    <div class="columns">
+                        <h4 style="color: red; margin-bottom: 4px;"> 
+                            {{job['title']}}
+                        </h4>
+                        <div>
+                            <b>Location:</b> {{job['location']}}
+                        </div>
+                        {% if 'salary' in job%}
+                        <div>
+                            <b>Salary:</b> {{job['salary']}}
+                        </div>
+                        {% endif%}
+                    </div>  
+                    <div class="apply-button-container">
+                        <button class="apply-btn">Apply</button>
+                    </div>
+                </div>
+                
+            {% endfor %}
+        </div>
+        <div class="button-container">
+            <button class="contact-btn">Contact Us</button>
+        </div>
+    </div>
+</body>
+</html>
