@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, text
 import os
 
-db_connection_string = os.environ.get('DB_CONNECTION_STRING')
+db_connection_string = 'mysql+pymysql://sql5700633:5BtfaBzQmB@sql5.freemysqlhosting.net/sql5700633?charset=utf8mb4'
 
 engine = create_engine(db_connection_string)
 
@@ -21,3 +21,13 @@ def load_jobs_from_db():
             job[column_name] = value
         jobs.append(job)
     return jobs
+
+def load_job_from_db(id):
+    with engine.connect() as conn:
+        result = conn.execute(text('select * from jobs where id = :val'), {'val': id})
+        row = result.fetchone()
+        if row is None:
+            return None
+        else:
+            column_names = result.keys()
+            return dict(zip(column_names, row))
