@@ -11,14 +11,14 @@ JOBS = [
   },
   {
     'id' : 2,
-    'title': 'Beer Truck Driver',
-    'location': 'New Asgard',
-  },
-  {
-    'id' : 3,
     'title': "Peter Parker's Math Tutor",
     'location': 'New York City, USA',
     'salary' : '$19,000/Year'
+  },
+  {
+    'id' : 3,
+    'title': 'Beer Truck Driver',
+    'location': 'New Asgard',
   },
   {
     'id' : 4,
