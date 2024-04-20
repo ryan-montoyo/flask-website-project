@@ -1,0 +1,18 @@
+<div style="display:flex;margin-top: 15px; margin-bottom: 16px; font-family: 'Roboto'; font-size: 17px; border-bottom: 1px solid lightgrey; padding-bottom: 9px; margin-bottom: -4px ;">
+    <div class="columns">
+        <h4 style="color: red; margin-bottom: 4px;"> 
+            {{job['title']}}
+        </h4>
+        <div>
+            <b>Location:</b> {{job['location']}}
+        </div>
+        {% if 'salary' in job%}
+        <div>
+            <b>Salary:</b> {{job['salary']}}
+        </div>
+        {% endif%}
+    </div>  
+    <div class="apply-button-container">
+        <a class="apply-btn" href="mailto:careers@avengers.net?subject=Application%20for%20{{job['title']}}&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20Resume%20link%3A%20%3Cresume%20link%3E%0D%0A%0D%0AMy%20LinkedIn%20link%3A%20%3Clinkedin%20in%3E%0D%0A%0D%0A">Apply</a>
+    </div>
+</div>
