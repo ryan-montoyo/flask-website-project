@@ -1,1 +1,7 @@
 # flask-website-project
+
+## How this website works:
+### In this project I used Flask, HTML, CSS and MySQL to create a dynamic job application website. I used FreMySQLHosting to host a MySQL server and used MySQL workbench to make changes and view the data in my server. This website takes the jobs listed in the jobs table on MySQL along with each of the job's additional information (salary, location, etc.) and dynamically creates a job posting on the site. When clicking on the Apply button for said job, it takes the user to a dynamically generated page based on the job's ID number in the server and lists the information from the jobs table again above the application form. When submitting an application, the user's typed information is sent to the server under a table called applications. In this applications table on my server, it shows the answers to all the questions asked on the application as well as which job they applied to through the ID number. 
+
+## What I learned:
+### This project taught me many things. I learned how to separate different aspects of an HTML file and incorporate using the include gaurd. I also learned many ways to style HTML without creating a CSS document. I learned how to host a MySQL server and manipulate, GET and Send data to and from said server. I learned how to start a Flask website and incorporate a databse into it. I learned how to dynamically generate items on a site or even whole new dynamically generated pages of a site. 
