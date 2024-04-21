@@ -11,6 +11,14 @@ def hello_avengers():
   jobs = load_jobs_from_db()
   return render_template('home.html', jobs = jobs, company_name = 'Avengers')
 
+@app.route('/FAQ')
+def faq_page():
+  return render_template('FAQ.html', company_name = 'Avengers')
+
+@app.route('/about')
+def about_pahe():
+  return render_template('about.html')
+
 @app.route('/api/jobs')
 def listJobs():
   jobs = load_jobs_from_db()
@@ -22,6 +30,7 @@ def show_job(id):
   if not job:
     return "Not Found", 404
   return render_template('jobpage.html', job=job)
+
 
 @app.route("/job/<id>/apply", methods=['post'])
 def apply_to_job(id):
